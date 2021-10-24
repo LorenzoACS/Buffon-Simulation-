@@ -1,17 +1,21 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BuffonSimulation {
     public static Tarp tarp = new Tarp(400.0, 100.0);
     public static ArrayList<Needle> needles = new ArrayList<Needle>();
     public static boolean bool = true;
     public static int counter = 0;
-    public static int max = 1000;
+    public static int max;
+    public static Scanner scan = new Scanner(System.in);
     
     public static void main(String[] args) {
         //System.out.println(test.angle());
         //System.out.println(test.center());
         //System.out.println(test.leftTip());
         //System.out.println(test.rightTip());
+        System.out.println("Input how many needles you would like to drop.");
+        max = scan.nextInt();
         for (int i = 0; i < max; i++) {
             needles.add(new Needle(100.0, tarp));
             //System.out.println(needles.size());
