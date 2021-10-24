@@ -35,7 +35,7 @@ public class BuffonSimulation {
             if (i + 1 == max) {
                 System.out.println("Number of needles crossing the line: " + counter);
                 System.out.println("Total number of needles dropped: " + needles.size());
-                System.out.print("Buffon Needle's Estimation of PI: " + (needles.size() / 2.0) / (double) counter);
+                System.out.print("Buffon Needle's Estimation of PI: " + needles.size() / (double) counter);
                 //System.out.println(tarp.numberOfCrossings());
                 //System.out.println(tarp.fractionOfCrossings());
                 break;
