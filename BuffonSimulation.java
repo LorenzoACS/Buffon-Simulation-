@@ -5,7 +5,7 @@ public class BuffonSimulation {
     public static ArrayList<Needle> needles = new ArrayList<Needle>();
     public static boolean bool = true;
     public static int counter = 0;
-    public static int max = 150;
+    public static int max = 1000;
     
     public static void main(String[] args) {
         //System.out.println(test.angle());
@@ -15,8 +15,8 @@ public class BuffonSimulation {
         for (int i = 0; i < max; i++) {
             needles.add(new Needle(100.0, tarp));
             //System.out.println(needles.size());
-            System.out.println(needles.get(i).leftTip() + " Left");
-            System.out.println(needles.get(i).rightTip() + " Right");
+            //System.out.println(needles.get(i).leftTip() + " Left");
+            //System.out.println(needles.get(i).rightTip() + " Right");
             if (needles.get(i).leftTip() == 0.0 || needles.get(i).leftTip() < 0.0) {
                 counter++;
             } 
@@ -33,9 +33,9 @@ public class BuffonSimulation {
                 counter++;
             }
             if (i + 1 == max) {
-                System.out.println(counter);
-                System.out.println(needles.size());
-                System.out.println(needles.size() / (double) counter);
+                System.out.println("Number of needles crossing the line: " + counter);
+                System.out.println("Total number of needles dropped: " + needles.size());
+                System.out.print("Buffon Needle's Estimation of PI: " + (needles.size() / 2.0) / (double) counter);
                 //System.out.println(tarp.numberOfCrossings());
                 //System.out.println(tarp.fractionOfCrossings());
                 break;
