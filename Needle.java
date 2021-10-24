@@ -27,12 +27,12 @@ public class Needle {
     }
     // Return the left tip or point of the needle.
     public double leftTip() {
-        d = (this.length / 2) * Math.cos(this.angle);
+        d = this.length * Math.cos(this.angle);
         return this.position - d; 
     }
     // Return the right tip or point of the needle. 
     public double rightTip() {
-        d = (this.length / 2) * Math.cos(this.angle);
+        d = this.length * Math.cos(this.angle);
         return this.position + d;
     }
     // Return the random angle of this needle. 
