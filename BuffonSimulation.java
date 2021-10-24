@@ -29,6 +29,9 @@ public class BuffonSimulation {
             if (needles.get(i).rightTip() == 400.0 || needles.get(i).rightTip() > 400.0) {
                 counter++;
             }   
+            if (needles.get(i).center() == 0.0 || needles.get(i).center() == 400.0){
+                counter++;
+            }
             if (i + 1 == max) {
                 System.out.println(counter);
                 System.out.println(needles.size());
