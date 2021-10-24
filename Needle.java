@@ -1,4 +1,5 @@
 import java.util.Random;
+
 public class Needle {
     public static int numberOfNeedles; 
     private final double length;
@@ -6,8 +7,6 @@ public class Needle {
     private final double angle;
     private final Tarp tarp; 
     private double d; 
-    private double min = -Math.PI;
-    private double max = Math.PI/2.0;
     
     public Needle(double length, double position, double angle, Tarp tarp) {
         this.length = length;
@@ -20,7 +19,7 @@ public class Needle {
         this.length = length;
         this.tarp = tarp;
         position = Math.random() * 400 + 1;
-        angle = Math.random() * min + max;
+        angle = Math.random() * Math.PI - Math.PI/2;
     }
     // Return the location of the center.
     public double center() {
@@ -28,12 +27,12 @@ public class Needle {
     }
     // Return the left tip or point of the needle.
     public double leftTip() {
-        d = (this.length / 2) / Math.cos(this.angle);
+        d = (this.length / 2) * Math.cos(this.angle);
         return this.position - d; 
     }
     // Return the right tip or point of the needle. 
     public double rightTip() {
-        d = (this.length / 2) / Math.cos(this.angle);
+        d = (this.length / 2) * Math.cos(this.angle);
         return this.position + d;
     }
     // Return the random angle of this needle. 
